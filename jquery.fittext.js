@@ -41,7 +41,7 @@
           "font-size",
           pxToRem(Math.max(
             Math.min(
-              pxToRem($this.width() / (compressor * 10)),
+              $this.width() / (compressor * 10),
               parseFloat(settings.maxFontSize)
             ),
             parseFloat(settings.minFontSize)
