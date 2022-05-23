@@ -22,9 +22,13 @@
       );
     var pxToRem = function ptr(px) {
       var x = 16,
-        rem = (1 / x) * px + "rem";
+        rem = (1 / x) * px;
 
       return rem;
+    };
+
+    var remToPx = function convertRemToPixels(rem) {    
+      return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
     };
 
     return this.each(function () {
@@ -37,11 +41,11 @@
           "font-size",
           pxToRem(Math.max(
             Math.min(
-              $this.width() / (compressor * 10),
+              pxToRem($this.width() / (compressor * 10)),
               parseFloat(settings.maxFontSize)
             ),
             parseFloat(settings.minFontSize)
-          ))
+          )) + 'rem'
         );
       };
 
