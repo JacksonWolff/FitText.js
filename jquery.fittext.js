@@ -22,7 +22,7 @@
       );
     var pxToRem = function ptr(px) {
       var x = $(window).width() / 90,
-        rem = (1 / x) * px;
+        rem = (3 / x) * px;
 
       return rem;
     };
@@ -50,10 +50,10 @@
       };
 
       // Call once to set.
-      resizer();
+      //resizer();
 
       // Call on resize. Opera debounces their resize by default.
-      $(window).on("resize.fittext orientationchange.fittext", resizer);
+      //$(window).on("resize.fittext orientationchange.fittext", resizer);
     });
   };
 })(jQuery);
