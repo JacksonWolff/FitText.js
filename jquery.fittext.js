@@ -21,7 +21,7 @@
         options
       );
     var pxToRem = function ptr(px) {
-      var x = 16,
+      var x = $(window).width() / 90,
         rem = (1 / x) * px;
 
       return rem;
